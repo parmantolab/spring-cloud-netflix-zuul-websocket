@@ -6,7 +6,7 @@
     <groupId>com.github.mthizo247</groupId>
     <artifactId>spring-cloud-netflix-zuul-websocket</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.7.RELEASE</version>
+    <version>1.0.7x.RELEASE</version>
     <name>Spring Cloud Netflix Zuul Websocket</name>
     <description>Spring Cloud Netflix Zuul Websocket</description>
     <url>https://www.discovery.co.za</url>
@@ -59,18 +59,27 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>1.7</java.version>
+        <main.basedir>${basedir}/..</main.basedir>
     </properties>
 
     <distributionManagement>
         <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>local-repo</id>
+            <name>RepositoryProxyRel</name>
+            <url>file://${main.basedir}/../_repo</url>
         </repository>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
     </distributionManagement>
+
+    <!--<distributionManagement>-->
+        <!--<repository>-->
+            <!--<id>ossrh</id>-->
+            <!--<url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>-->
+        <!--</repository>-->
+        <!--<snapshotRepository>-->
+            <!--<id>ossrh</id>-->
+            <!--<url>https://oss.sonatype.org/content/repositories/snapshots</url>-->
+        <!--</snapshotRepository>-->
+    <!--</distributionManagement>-->
 
     <dependencies>
         <dependency>

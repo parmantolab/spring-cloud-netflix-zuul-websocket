@@ -44,6 +44,6 @@ public class BasicAuthPrincipalHeadersCallback extends AbstractHeadersCallback {
 
     @Override
     protected boolean shouldApplyHeaders(WebSocketSession userAgentSession, WebSocketHttpHeaders headers) {
-        return !headers.containsKey(HttpHeaders.AUTHORIZATION) && userAgentSession.getPrincipal() instanceof Authentication;
+        return !headers.containsKey(HttpHeaders.AUTHORIZATION) && userAgentSession.getPrincipal() instanceof Authentication && ((Authentication) userAgentSession.getPrincipal()).getCredentials() != null;
     }
 }
